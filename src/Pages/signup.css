@@ -1,0 +1,88 @@
+.main{
+    /* background-color: #ffffff; */
+   
+        background-image: linear-gradient(rgba(63, 128, 202, 0.973)rgba(12, 18, 189, 0.701)),url("https://i.postimg.cc/gjNYyy9g/images-13.jpg");
+        background-size:cover;
+        background-position: 50%;
+        height: 100vh;
+      
+}
+.section1 {
+   /* margin-left: -30%; */
+    padding-left: 8rem;
+    padding-top: 8rem;
+    overflow-x: hidden;
+    height: 100vh;
+  }
+  .emptycolumn img{
+ 
+    border-radius: 8px;
+  }
+
+  
+  .signuphead{
+  font-size: 30px;
+  font-weight: 700;
+  color: #052864;
+  }
+  
+  .subtitle{
+    font-size: 16px;
+  }
+  
+  
+  .input {
+    gap: 15px;
+    margin-top: 10px;
+    display: grid;
+  }
+  
+
+  
+  button {
+    color: white;
+    background: linear-gradient(
+        92.65deg,
+       
+        #052864 55.11%,
+        #3b13bd 92.38%
+      ),
+      #3193e4;
+    width: 100%;
+    max-width: 360px;
+    height: 40px;
+    left: 192px;
+    top: 497px;
+    border-radius: 4px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    padding: 22px;
+  }
+  
+  
+ 
+  
+  @media (max-width: 770px){
+    .section1{
+     margin-left: -25%;
+    }
+    .emptycolumn{
+        display: none;
+    }
+    .input {
+      grid-template-columns: 1fr;
+    }
+  
+    .input input {
+      width: 100%;
+    }
+    button {
+      width: 85%;
+      justify-content: center;
+      align-items: center;
+    }
+    
+  }
