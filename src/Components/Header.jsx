@@ -27,20 +27,20 @@ localStorage.clear()
         <Container>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-          <Navbar.Brand className='fs-3  brand mb-2' style={{fontWeight:'bolder', marginRight:'10%'}} data-aos="flip-left" >  RENTACAR </Navbar.Brand>
+          <Navbar.Brand className='fs-2  brand mb-2' style={{fontWeight:'bolder', marginRight:'10%'}} data-aos="flip-left" >  RENTACAR </Navbar.Brand>
 
           <Nav className="navbar-expand me-auto">
 
           <Link className='text-decoration-none' to={'/'}>
-            <Nav.Item className='navlink fs-4 ms-4'   >HOME</Nav.Item>
+            <Nav.Item className='navlink fs-4 ms-4'  >HOME</Nav.Item>
             </Link>
             {
-              !isloggedinData?<Link className='text-decoration-none' to={'/services'}>
+              !isloggedinData?<Link className='text-decoration-none' to={'/cars'}>
               <Nav.Item className='navlink fs-4 ms-4'>WORKS</Nav.Item>
               </Link>:<Nav.Item className='navlink fs-4 ms-4'></Nav.Item>
             }
             
-            <Link className='text-decoration-none' to={'/blog'}>
+            <Link className='text-decoration-none' to={'/'}>
             <Nav.Item className='navlink fs-4 ms-4 text-decoration-none' >BLOG</Nav.Item>
             </Link>
 
@@ -74,7 +74,7 @@ localStorage.clear()
           
         <div>
        {
-         !isloggedinData ?<Link className='text-decoration-none' to={'/login'}>  <Button className=' mt-2 fs-5 btn-sm mx-2 text-white' variant='info'>LOGIN</Button>
+         !isloggedinData ?<Link className='text-decoration-none' to={'/'}>  <Button className=' mt-2 fs-5 btn-sm mx-2 text-white' variant='info'>LOGIN</Button>
          </Link>:
         <Button onClick={adminLogout} className=' mt-2 fs-5 btn-sm' variant='dark'>LOGOUT</Button>
        }  

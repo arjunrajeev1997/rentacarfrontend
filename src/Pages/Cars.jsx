@@ -12,6 +12,11 @@ function Cars() {
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
 
+
+  const enquiryAlert=()=>{
+alert("Thankyou rentacar will contact ou soon")
+  }
+
   return (
     <div className="display " style={{ padding: "1rem 0" }}>
          <Header></Header>
@@ -150,7 +155,7 @@ function Cars() {
 
       {/* model */}
 
-      <Modal show={show}>
+      <Modal show={show}  onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>ENTER YOUR DETAILS</Modal.Title>
         </Modal.Header>
@@ -185,7 +190,7 @@ function Cars() {
           </form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="dark">SEND</Button>
+          <Button onClick={enquiryAlert} style={{width:'100%', marginRight:'10%'}} variant="dark">SEND</Button>
         </Modal.Footer>
       </Modal>
     </div>
