@@ -18,9 +18,10 @@ function Home() {
   
   return (
     <div   >
-      <Header></Header>
+      
 
       <section className='start' style={{ padding: '1rem 0' }} >
+      <Header></Header>
       
         <div className='d-flex align-items-center justify-content-start' data-aos="fade-down"
           data-aos-easing="linear"

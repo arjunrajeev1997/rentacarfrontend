@@ -32,39 +32,39 @@ localStorage.clear()
           <Nav className="navbar-expand me-auto">
 
           <Link className='text-decoration-none' to={'/'}>
-            <Nav.Item className='navlink fs-4 ms-4'  >HOME</Nav.Item>
+            <Nav.Item className='navlink fs-4 ms-4 text-white'  >HOME</Nav.Item>
             </Link>
             {
               !isloggedinData?<Link className='text-decoration-none' to={'/cars'}>
-              <Nav.Item className='navlink fs-4 ms-4'>WORKS</Nav.Item>
+              <Nav.Item className='navlink fs-4 ms-4 text-white'>WORKS</Nav.Item>
               </Link>:<Nav.Item className='navlink fs-4 ms-4'></Nav.Item>
             }
             
             <Link className='text-decoration-none' to={'/'}>
-            <Nav.Item className='navlink fs-4 ms-4 text-decoration-none' >BLOG</Nav.Item>
+            <Nav.Item className='navlink fs-4 ms-4 text-decoration-none text-white' >BLOG</Nav.Item>
             </Link>
 
             {
               !isloggedinData?<Link className='text-decoration-none' to={'/contact'}>
-              <Nav.Item className='navlink fs-4 ms-4'>ENQUIRY</Nav.Item>
+              <Nav.Item className='navlink fs-4 ms-4 text-white'>ENQUIRY</Nav.Item>
               </Link>:<Nav.Item className='navlink fs-4 ms-4'></Nav.Item>
             }
             
 {
   isloggedinData?<Link className='text-decoration-none' to={'/list'}>
-  <Nav.Item className='navlink fs-4 ms-4'>ENQUIRED LIST</Nav.Item>
+  <Nav.Item className='navlink fs-4 ms-4 text-white'>ENQUIRED LIST</Nav.Item>
   </Link>:<Nav.Item className='navlink fs-4 ms-4'></Nav.Item>
 }
 
 
 {
   isloggedinData?<Link className='text-decoration-none' to={'/works'}>
-  <Nav.Item className='navlink fs-4 ms-4'>ADD</Nav.Item>
+  <Nav.Item className='navlink fs-4 ms-4 text-white'>ADD</Nav.Item>
   </Link>:<Nav.Item className='navlink fs-4 ms-4'></Nav.Item>
 }
 {
   isloggedinData?<Link className='text-decoration-none' to={'/admindisplay'}>
-  <Nav.Item className='navlink fs-4 ms-4'>WORKS</Nav.Item>
+  <Nav.Item className='navlink fs-4 ms-4 text-white'>WORKS</Nav.Item>
   </Link>:<Nav.Item className='navlink fs-4 ms-4'></Nav.Item>
 }
             
