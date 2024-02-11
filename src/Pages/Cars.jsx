@@ -2,26 +2,69 @@ import React, { useEffect, useState } from "react";
 import { Row, Col, Button } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import "./Cars.css";
-
 import Modal from "react-bootstrap/Modal";
 import Header from "../Components/Header";
+import { addEnquiries, getAllCars } from "../Services/Allapi";
+import { useNavigate } from "react-router-dom";
+
 
 function Cars() {
+
+  const navigate=useNavigate()
+  const [inputs, setInputs] = useState({
+      uname: "",
+      email: "",
+      phn: "",
+      days:""
+  })
+
+  const getInputs = (e) => {
+    const { name, value } = e.target
+    setInputs({ ...inputs, [name]: value })
+}
+console.log(inputs);
+
+
+  const [display, setDisplay] = useState({})
   const [show, setShow] = useState(false);
 
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
 
 
-  const enquiryAlert=()=>{
-alert("Thankyou rentacar will contact ou soon")
+  const getCars = async () => {
+    const { data } = await getAllCars()
+      console.log(data);
+      setDisplay(data)
   }
+  
+  console.log(display);
+
+
+  const handleSubmit=async(e)=>{
+    e.preventDefault();
+    const result=await addEnquiries(inputs)
+    console.log(result);
+    alert("Data successfully sent,we will contact you shortly")
+    navigate('/cars')
+    handleClose();
+}
+
+
+
+  useEffect(() => {
+    getCars();
+}, [])
 
   return (
     <div className="display " style={{ padding: "1rem 0" }}>
          <Header></Header>
       <Row>
-        <Col sm={12} md={6} lg={4}>
+
+
+        {
+          display.length>0 && display.map((i) => (
+<Col sm={12} md={6} lg={4}>
           <Card
             data-aos="fade-up-left"
             data-aos-duration="1500"
@@ -33,24 +76,24 @@ alert("Thankyou rentacar will contact ou soon")
                 className="cardimg"
                 style={{ width: "100%", height: "14.5rem" }}
                 variant="top"
-                src="https://i.postimg.cc/pLvYd4WC/download-13.jpg"
+                src={i.image}
               />
             </div>
             <Card.Body>
               <Card.Title className="text-dark text-center fw-bolder fs-4">
-                Maruti Suzuki Swift
+                {i.brand}
               </Card.Title>
-              <Card.Text className="text-center">
-                1200 Rs/ day <br />
+              <Card.Text className="text-center fw-bolder">
+                {i.price} Rs/ day <br />
                 <hr />
                 <div className="d-flex flex-row justify-content-evenly">
                   <div>
-                    <p>seat (4+1)</p>
-                    <p>TYPE: gg </p>
+                    <p>seat {i.seat}</p>
+                    <p>{i.facility}</p>
                   </div>
                   <div>
-                    <p>TYPE: gg </p>
-                    <p>TYPE: gg </p>
+                    <p>RATE: {i.rate} </p>
+                    <img style={{height:'50px', width:'120px',marginTop:'-10px'}} src="https://i.postimg.cc/wTYnPFWR/360-F-274864312-u-Nlm9y-Cpd-Viw-Kz-Hk-Cp0s-OBrm-JFN0p-KAa-removebg-preview-1.png" alt="" />
                   </div>
                 </div>
               </Card.Text>
@@ -65,92 +108,10 @@ alert("Thankyou rentacar will contact ou soon")
           </Card>
         </Col>
 
-        <Col sm={12} md={6} lg={4}>
-          <Card
-            data-aos="fade-up-left"
-            data-aos-duration="1500"
-            className="mt-3 mb-2 bg-light ms-3"
-            style={{ width: "26rem", height: "31rem" }}
-          >
-            <div>
-              <Card.Img
-                className="cardimg"
-                style={{ width: "100%", height: "15rem" }}
-                variant="top"
-                src="https://i.postimg.cc/hPV4r39H/download-14.jpg"
-              />
-            </div>
-            <Card.Body>
-              <Card.Title className="text-dark text-center fw-bolder fs-4">
-                Wagon r
-              </Card.Title>
-              <Card.Text className="text-center">
-                1200 Rs/ day <br />
-                <hr />
-                <div className="d-flex flex-row justify-content-evenly">
-                  <div>
-                    <p>seat (4+1)</p>
-                    <p>TYPE: gg </p>
-                  </div>
-                  <div>
-                    <p>TYPE: gg </p>
-                    <p>TYPE: gg </p>
-                  </div>
-                </div>
-              </Card.Text>
-              <Button
-                onClick={handleShow}
-                style={{ marginLeft: "30%", width: "40%" }}
-                className="btn-sm btn-dark "
-              >
-                RENT
-              </Button>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col sm={12} md={6} lg={4}>
-          <Card
-            data-aos="fade-up-left"
-            data-aos-duration="1500"
-            className="mt-3 mb-2 bg-light ms-3"
-            style={{ width: "26rem", height: "31rem" }}
-          >
-            <div>
-              <Card.Img
-                className="cardimg"
-                style={{ width: "100%", height: "15rem" }}
-                variant="top"
-                src="https://i.postimg.cc/ZR6sg3VK/indica-vista-2008-2011.webp"
-              />
-            </div>
-            <Card.Body>
-              <Card.Title className="text-dark text-center fw-bolder fs-4">
-                Tata Indica Vista
-              </Card.Title>
-              <Card.Text className="text-center">
-                1200 Rs/ day <br />
-                <hr />
-                <div className="d-flex flex-row justify-content-evenly">
-                  <div>
-                    <p>seat (4+1)</p>
-                    <p>TYPE: gg </p>
-                  </div>
-                  <div>
-                    <p>TYPE: gg </p>
-                    <p>TYPE: gg </p>
-                  </div>
-                </div>
-              </Card.Text>
-              <Button
-                onClick={handleShow}
-                style={{ marginLeft: "30%", width: "40%" }}
-                className="btn-sm btn-dark "
-              >
-                RENT
-              </Button>
-            </Card.Body>
-          </Card>
-        </Col>
+          ))
+        }
+        
+       
       </Row>
 
       {/* model */}
@@ -163,6 +124,7 @@ alert("Thankyou rentacar will contact ou soon")
           <form>
             <div className="form-outline mb-3">
               <input
+              onChange={(e) => getInputs(e)}
                 type="text"
                 name="uname"
                 className="form-control  form-control-lg"
@@ -172,6 +134,7 @@ alert("Thankyou rentacar will contact ou soon")
 
             <div className="form-outline mb-3">
               <input
+              onChange={(e) => getInputs(e)}
                 type="email"
                 name="email"
                 className="form-control form-control-lg"
@@ -181,16 +144,26 @@ alert("Thankyou rentacar will contact ou soon")
 
             <div className="form-outline mb-3">
               <input
+              onChange={(e) => getInputs(e)}
                 type="number"
                 name="phn"
                 className="form-control form-control-lg "
               />
               <label className="form-label text-dark">Your phone</label>
             </div>
+            <div className="form-outline mb-3">
+              <input
+              onChange={(e) => getInputs(e)}
+                type="text"
+                name="days"
+                className="form-control form-control-lg "
+              />
+              <label className="form-label text-dark">Number of days</label>
+            </div>
           </form>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={enquiryAlert} style={{width:'100%', marginRight:'10%'}} variant="dark">SEND</Button>
+          <Button onClick={handleSubmit} style={{width:'100%', marginRight:'10%'}} variant="dark">SEND</Button>
         </Modal.Footer>
       </Modal>
     </div>

@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Faster+One&family=Honk&family=Lilita+One&family=Racing+Sans+One&family=Rowdies:wght@300;400;700&display=swap');
+
+
+
 .main{
     /* background-color: #ffffff; */
    
@@ -24,6 +28,8 @@
   font-size: 30px;
   font-weight: 700;
   color: #052864;
+  font-family: "Rowdies", sans-serif;
+  font-style: normal;
   }
   
   .subtitle{

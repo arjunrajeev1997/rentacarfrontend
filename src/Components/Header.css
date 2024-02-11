@@ -1,20 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Faster+One&family=Racing+Sans+One&display=swap');
+
 #navbar {
-    background-color: rgba(97, 101, 212, 0.356);
-    border-radius: 50px;
-    font-family: 'IBM Plex Sans Condensed', sans-serif;
+  /* background-color: rgba(174, 176, 220, 0.511);
+   */
+   background-color: transparent;
+  border-radius: 50px;
+  font-family: "IBM Plex Sans Condensed", sans-serif;
 }
 
 .navlink {
-
-    color: rgb(27, 24, 24);
+  color: rgb(255, 254, 254);
 }
 
 .navlink:hover {
-    color: rgb(90, 34, 12);
-    font-weight: 600;
-    font-style: italic;
+    color:rgb(0, 200, 255);
+  font-weight: 600;
+  font-style: italic;
 }
 
 .brand {
-    color: rgb(255, 255, 255);
+  color: rgb(244, 244, 244);
+font-size: 45px;
+  font-family: "Racing Sans One", sans-serif;
+  font-weight: 400;
+  
+}
+
+.brand:hover{
+    color:rgb(0, 200, 255)
 }

@@ -39,7 +39,7 @@ function Home() {
       <Row className='p-5'>
         <Col className='md-4 lg-4 '>
           <Link className='text-decoration-none' to={'/cars'}>
-          <Card data-aos="zoom-in" data-aos-duration="1000" className='' style={{ width: '23.1rem', height:'30rem' }}>
+          <Card data-aos="zoom-in" data-aos-duration="1000" className='' style={{ width: '23.1rem', height:'30rem',boxShadow:'10px' }}>
             <Card.Img className='cardimg' variant="top" style={{width:'23rem',height:'18rem'}} src="https://i.postimg.cc/RZWySkRP/qnpasplo-updated-2023-rollsroyce-phantom-series-ii-unveiled-with-new-features-and-connected-tech-625.webp" />
             <Card.Body>
               
