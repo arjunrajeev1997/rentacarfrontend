@@ -4,7 +4,8 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import "./Header.css";
 import { Link, useNavigate } from "react-router-dom";
-import { Button } from "react-bootstrap";
+import { Button, NavDropdown } from "react-bootstrap";
+
 
 function Header() {
   const navigate = useNavigate();
@@ -68,20 +69,33 @@ function Header() {
                 <Nav.Item className="navlink fs-4 ms-4"></Nav.Item>
               )}
 
+            
               {isloggedinData ? (
-                <Link className="text-decoration-none" to={"/addnew"}>
-                  <Nav.Item className="navlink fs-4 ms-4 ">ADD</Nav.Item>
-                </Link>
+                
+                <NavDropdown  className="dropdown text-white custom-dropdown ms-3"
+              id="nav-dropdown-example"
+              title="ADD"
+              style={{color:'white'}}
+              
+            >
+              <NavDropdown.Item href="/addnew">BUDGET CARS</NavDropdown.Item>
+              <NavDropdown.Item href="/addluxury">
+                LUXURY CARS
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/addelectric">ELECTRIC CARS</NavDropdown.Item>
+             
+              
+            </NavDropdown>
               ) : (
                 <Nav.Item className="navlink fs-4 ms-4"></Nav.Item>
               )}
-              {isloggedinData ? (
+              {/* {isloggedinData ? (
                 <Link className="text-decoration-none" to={"/cars"}>
                   <Nav.Item className="navlink fs-4 ms-4 ">CARS</Nav.Item>
                 </Link>
               ) : (
                 <Nav.Item className="navlink fs-4 ms-4"></Nav.Item>
-              )}
+              )} */}
             </Nav>
           </Navbar.Collapse>
           {/* <img style={{height:'90px', width:'100px'}} src="https://i.postimg.cc/TY3TS7Qz/Whats-App-Image-2023-11-13-at-8-28-38-PM-removebg-preview.png" alt="" /> */}

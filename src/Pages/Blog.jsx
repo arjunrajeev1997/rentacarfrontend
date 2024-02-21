@@ -61,7 +61,7 @@ function Blog() {
                         <p className='ps-3 mt-3' style={{color:'black',lineHeight:'35px', fontSize:'18px',fontStyle:'italic'}}> 
                         "Rent-A-Car exceeded my expectations during our recent family vacation. We needed a spacious SUV to accommodate our family of five, and Rent-A-Car had the perfect vehicle for us. The booking process was quick and straightforward, and the staff was friendly and helpful. The SUV was clean, comfortable, and equipped with all the features we needed for a smooth and enjoyable trip. Thank you, Rent-A-Car, for helping us create lasting memories!"                         </p>
 
-                        <p style={{marginLeft:'20px'}}>-REENA RAJEEV</p>
+                        <p style={{marginLeft:'20px'}}>-MAX MILLER</p>
                         
 
                     </div>
@@ -69,7 +69,7 @@ function Blog() {
                 <Col className='md-6 lg-6' data-aos="fade-down"
           data-aos-easing="linear"
           data-aos-duration="1500" >
-                    <img src="https://i.postimg.cc/vT87ZPtZ/images-14.jpg" alt="" style={{ marginRight:'30px', marginTop:'60px'}} />
+                    <img src="https://thumbs.dreamstime.com/b/portrait-happy-customer-buying-new-car-salon-portrait-happy-customer-buying-new-car-104919884.jpg" alt="" style={{ marginRight:'30px', marginTop:'60px'}} />
                 </Col>
                 
 

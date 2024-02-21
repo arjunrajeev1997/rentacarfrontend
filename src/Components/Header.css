@@ -8,8 +8,8 @@
   font-family: "IBM Plex Sans Condensed", sans-serif;
 }
 
-.navlink {
-  color: rgb(255, 254, 254);
+.navlink, .dropdown {
+  color: rgb(255, 254, 254) ;
 }
 
 .navlink:hover {
@@ -28,4 +28,20 @@ font-size: 45px;
 
 .brand:hover{
     color:rgb(0, 200, 255)
+}
+
+/* #navbar .dropdown{
+  color: white !important;
+  font-size:25px;
+  font-weight: 500;
+  margin-top: -8px;
+
+
+} */
+
+.custom-dropdown .dropdown-toggle {
+  color: white !important;
+  font-size:24px;
+  font-weight: 500;
+  margin-top: -8px;
 }
